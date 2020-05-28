@@ -16,7 +16,7 @@ export const reducer = (state = initialState, action) => {
             return { ...state }
         case "LOGIN":
             console.log("LOGIN called from reducer", action.payload)
-            return { ...state, name: action.payload.name, age: action.payload.age, userId: action.payload.userId, userEntries: action.payload.entries }
+            return { ...state, name: action.payload.name, age: action.payload.age, userId: action.payload.userId, userEntries: sortArray(action.payload.entries) }
         case "GET_USERS":
             console.log("GET_USERS called from reducer", action.payload)
             return { ...state }
